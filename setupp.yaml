@@ -1,0 +1,13 @@
+---
+- name: Deploy Artifact to Localhost
+  hosts: localhost
+  become: true
+  become_user: diya
+  become_method: su
+
+  tasks:
+    - name: Copy the artifact to the target location
+      copy:
+        src: "/var/lib/jenkins/workspace/mave/target/testing-1.0-SNAPSHOT.jar"
+        dest: "/home/diya/Desktop/t.jar"
+
